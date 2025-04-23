@@ -1,0 +1,35 @@
+{
+  "files": {
+    "main.css": "/static/css/main.82f8aa4b.css",
+    "main.js": "/static/js/main.806a1480.js",
+    "static/js/453.acca0757.chunk.js": "/static/js/453.acca0757.chunk.js",
+    "static/media/NPTEL.jpg": "/static/media/NPTEL.386892e47a5c683e1995.jpg",
+    "static/media/Kotlin.jpg": "/static/media/Kotlin.77594b4b601c985efb2d.jpg",
+    "static/media/Coursera.jpg": "/static/media/Coursera.e3f6d8624701b4733a52.jpg",
+    "static/media/Techvanto Academy.jpg": "/static/media/Techvanto Academy.fec52dc06d4a3717d843.jpg",
+    "static/media/B1.png": "/static/media/B1.3127062f3d61276c55c2.png",
+    "static/media/Udemy.jpg": "/static/media/Udemy.14fe82d90ec5f45ef70c.jpg",
+    "static/media/U3.jpg": "/static/media/U3.983826e854c04f77bb5a.jpg",
+    "static/media/WhatsApp Image 2023-03-10 at 8.35.34 PM.jpeg": "/static/media/WhatsApp Image 2023-03-10 at 8.35.34 PM.2100b710308125470e02.jpeg",
+    "static/media/Q2.jpg": "/static/media/Q2.8850813f0d516aa3b056.jpg",
+    "static/media/Q1.jpg": "/static/media/Q1.d09701e90ecd129ad960.jpg",
+    "static/media/Node Js.png": "/static/media/Node Js.10ccac0eb9dd930b6b6c.png",
+    "static/media/mysql.png": "/static/media/mysql.4610cbabbff468ff8ae3.png",
+    "static/media/Q3.jpg": "/static/media/Q3.01a6bf73f9ba8e0681e3.jpg",
+    "static/media/java.png": "/static/media/java.ddf8676bd569fe01ab44.png",
+    "static/media/U2.jpg": "/static/media/U2.225edff68f3ff4f0d922.jpg",
+    "static/media/U1.jpg": "/static/media/U1.dac913d63b35c4cf1fd5.jpg",
+    "static/media/Cpp.png": "/static/media/Cpp.24a8f93854ab092f17a7.png",
+    "static/media/python.png": "/static/media/python.c2f539d50caa3745ce64.png",
+    "static/media/css.png": "/static/media/css.6c9fd512b594be488cf9.png",
+    "static/media/html.png": "/static/media/html.485b6e20561ff56f5e38.png",
+    "index.html": "/index.html",
+    "main.82f8aa4b.css.map": "/static/css/main.82f8aa4b.css.map",
+    "main.806a1480.js.map": "/static/js/main.806a1480.js.map",
+    "453.acca0757.chunk.js.map": "/static/js/453.acca0757.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.82f8aa4b.css",
+    "static/js/main.806a1480.js"
+  ]
+}
