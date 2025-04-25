@@ -30,7 +30,7 @@ export default function Projects() {
       name: "Banking System",
       description: "A C++ console-based banking system featuring account creation, secure login, and transaction management.",
       images: [BankingImg],
-      link: "#",
+      link: "https://github.com/shahilkhan001/DSA-Practice/blob/project/BankingSystem.cpp",
     },
   ];
 
