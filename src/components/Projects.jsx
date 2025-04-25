@@ -18,7 +18,7 @@ export default function Projects() {
       name: "Android App - UtilMonitor",
       description: "An Android app that tracks utility usage with real-time updates.",
       images: [UtilAppImg, UtilAppImg2, UtilAppImg3],
-      link: "#",
+      link: "https://github.com/shahilkhan001/UtilMonitor",
     },
     {
       name: "Educational Quiz App",
