@@ -24,7 +24,7 @@ export default function Projects() {
       name: "Educational Quiz App",
       description: "An Android quiz app with randomized questions, real-time score tracking, a countdown timer, and dark mode support.",
       images: [QuizAppImg, QuizAppImg2, QuizAppImg3],
-      link: "#",
+      link: "https://github.com/shahilkhan001/Quize-App",
     },
     {
       name: "Banking System",
