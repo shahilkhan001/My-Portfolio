@@ -34,7 +34,7 @@ export default function Contact() {
 
         {/* Right: Contact Form */}
         <form
-          action="https://formsubmit.co/mdshahilkhan59@gmail.com"
+          action="https://formsubmit.co/eca07b68a82ca59651adff35f5ead8ef"
           method="POST"
           className="space-y-6 bg-gradient-to-br from-gray-800 to-gray-700 p-8 rounded-2xl shadow-2xl border border-white/10"
         >
