@@ -17,6 +17,7 @@ export default function Contact() {
           <div className="space-y-6 text-gray-400 text-base">
             <div>
               <span className="block text-sm text-gray-500 mb-1">Email</span>
+              <i className="fas fa-envelope mr-2"></i>
               <a
                 href="mailto:mdshahilkhan59@gmail.com"
                 className="hover:text-white transition"
@@ -27,6 +28,7 @@ export default function Contact() {
 
             <div>
               <span className="block text-sm text-gray-500 mb-1">Location</span>
+              <i className="fas fa-map-marker-alt mr-2"></i>
               Jalandhar, Punjab, India
             </div>
           </div>
