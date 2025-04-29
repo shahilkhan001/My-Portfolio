@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Contact() {
   return (
-    <section id="contact" className="bg-gray-900 py-24 px-6 text-white">
+    <section id="contact" className="bg-gradient-to-b from-blue-950 via-slate-900 to-indigo-950 py-24 px-6 text-white">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16">
         {/* Left: Heading + Info */}
         <div>
@@ -20,7 +20,7 @@ export default function Contact() {
               <i className="fas fa-envelope mr-2"></i>
               <a
                 href="mailto:mdshahilkhan59@gmail.com"
-                className="hover:text-white transition"
+                className="hover:text-cyan-400 transition"
               >
                 mdshahilkhan59@gmail.com
               </a>
@@ -38,7 +38,7 @@ export default function Contact() {
         <form
           action="https://formsubmit.co/eca07b68a82ca59651adff35f5ead8ef"
           method="POST"
-          className="space-y-6 bg-gradient-to-br from-gray-800 to-gray-700 p-8 rounded-2xl shadow-2xl border border-white/10"
+          className="space-y-6 bg-transparent p-8 rounded-2xl shadow-2xl border border-white/10 backdrop-blur-md"
         >
           <div>
             <label htmlFor="name" className="block mb-2 font-medium text-white">
@@ -49,7 +49,7 @@ export default function Contact() {
               id="name"
               name="name"
               required
-              className="w-full p-3 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-white placeholder-gray-400"
+              className="w-full p-3 bg-transparent border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-white placeholder-gray-400"
               placeholder="Your name"
             />
           </div>
@@ -63,7 +63,7 @@ export default function Contact() {
               id="email"
               name="email"
               required
-              className="w-full p-3 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-white placeholder-gray-400"
+              className="w-full p-3 bg-transparent border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-white placeholder-gray-400"
               placeholder="you@example.com"
             />
           </div>
@@ -77,14 +77,14 @@ export default function Contact() {
               name="message"
               rows={5}
               required
-              className="w-full p-3 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-white placeholder-gray-400"
+              className="w-full p-3 bg-transparent border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-white placeholder-gray-400"
               placeholder="Write your message here..."
             />
           </div>
 
           <button
             type="submit"
-            className="w-full bg-blue-600 hover:bg-blue-500 transition-all duration-300 py-3 px-6 rounded-lg font-semibold text-white shadow-lg hover:scale-[1.02]"
+            className="w-full bg-cyan-500 hover:bg-cyan-400 transition-all duration-300 py-3 px-6 rounded-lg font-semibold text-white shadow-lg hover:scale-[1.02]"
           >
             Send Message
           </button>

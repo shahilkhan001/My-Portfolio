@@ -9,23 +9,27 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="bg-gray-900 text-white p-4 shadow-md sticky top-0 z-50">
+    <nav className="bg-gradient-to-r from-blue-950 via-slate-900 to-indigo-950 text-white p-4 shadow-md sticky top-0 z-50">
       <div className="container mx-auto flex justify-between items-center">
-        <h1 className="text-xl font-bold">Shahil.dev</h1>
+        <h1 className="text-xl font-bold text-cyan-400">Shahil.dev</h1>
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-6 text-sm">
-          <li><a href="#home" className="hover:text-teal-400 transition duration-300">Home</a></li>
-          <li><a href="#about" className="hover:text-teal-400 transition duration-300">About</a></li>
-          <li><a href="#skills" className="hover:text-teal-400 transition duration-300">Skills</a></li>
-          <li><a href="#projects" className="hover:text-teal-400 transition duration-300">Projects</a></li>
-          <li><a href="#certifications" className="hover:text-teal-400 transition duration-300">Certifications</a></li>
-          <li><a href="#contact" className="hover:text-teal-400 transition duration-300">Contact</a></li>
+          {["home", "about", "skills", "projects", "certifications", "contact"].map((section) => (
+            <li key={section}>
+              <a
+                href={`#${section}`}
+                className="hover:text-cyan-400 transition duration-300 capitalize"
+              >
+                {section}
+              </a>
+            </li>
+          ))}
         </ul>
 
         {/* Mobile Hamburger Menu */}
         <div className="md:hidden">
-          <button onClick={toggleMenu} className="text-2xl">
+          <button onClick={toggleMenu} className="text-2xl text-cyan-300">
             {isMenuOpen ? <FiX /> : <FiMenu />}
           </button>
         </div>
@@ -33,14 +37,19 @@ export default function Navbar() {
 
       {/* Mobile Dropdown Menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-gray-800 text-white p-4 space-y-4">
+        <div className="md:hidden bg-slate-900 text-white p-6 rounded-b-xl shadow-lg">
           <ul className="flex flex-col items-center space-y-4">
-            <li><a href="#home" className="hover:text-teal-400">Home</a></li>
-            <li><a href="#about" className="hover:text-teal-400">About</a></li>
-            <li><a href="#skills" className="hover:text-teal-400">Skills</a></li>
-            <li><a href="#projects" className="hover:text-teal-400">Projects</a></li>
-            <li><a href="#certifications" className="hover:text-teal-400">Certifications</a></li>
-            <li><a href="#contact" className="hover:text-teal-400">Contact</a></li>
+            {["home", "about", "skills", "projects", "certifications", "contact"].map((section) => (
+              <li key={section}>
+                <a
+                  href={`#${section}`}
+                  onClick={() => setIsMenuOpen(false)}
+                  className="hover:text-cyan-400 transition capitalize"
+                >
+                  {section}
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
       )}
