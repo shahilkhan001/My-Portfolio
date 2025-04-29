@@ -26,7 +26,7 @@ export default function About() {
 
         <p className="text-gray-400 text-lg leading-relaxed max-w-3xl mx-auto mt-4">
           I thrive on building innovative solutions, diving into new
-          technologies, and leveling up my skills in both frontend in <span className="text-cyan-400 font-semibold"> Android Development </span> and <span className="text-cyan-400 font-semibold"> Cyber
+          technologies, and leveling up my skills in both <span className="text-cyan-400 font-semibold"> Android App Development </span> and <span className="text-cyan-400 font-semibold"> Cyber
           Security </span>. My curiosity keeps me exploring, experimenting, and
           evolving every step of the way.
         </p>

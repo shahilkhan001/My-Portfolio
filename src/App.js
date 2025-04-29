@@ -5,6 +5,7 @@ import About from "./components/About";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Certifications from "./components/Certifications";
+
 // import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 import "./index.css";

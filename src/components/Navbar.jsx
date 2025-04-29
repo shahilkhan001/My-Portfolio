@@ -15,6 +15,7 @@ export default function Navbar() {
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-6 text-sm">
+          <li><a href="#home" className="hover:text-teal-400 transition duration-300">Home</a></li>
           <li><a href="#about" className="hover:text-teal-400 transition duration-300">About</a></li>
           <li><a href="#skills" className="hover:text-teal-400 transition duration-300">Skills</a></li>
           <li><a href="#projects" className="hover:text-teal-400 transition duration-300">Projects</a></li>
@@ -34,6 +35,7 @@ export default function Navbar() {
       {isMenuOpen && (
         <div className="md:hidden bg-gray-800 text-white p-4 space-y-4">
           <ul className="flex flex-col items-center space-y-4">
+            <li><a href="#home" className="hover:text-teal-400">Home</a></li>
             <li><a href="#about" className="hover:text-teal-400">About</a></li>
             <li><a href="#skills" className="hover:text-teal-400">Skills</a></li>
             <li><a href="#projects" className="hover:text-teal-400">Projects</a></li>

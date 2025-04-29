@@ -1,9 +1,10 @@
 import { FiMail, FiLinkedin, FiGithub } from "react-icons/fi";
 import profileImage from "../assets/WhatsApp Image 2023-03-10 at 8.35.34 PM.jpeg";
 
+
 export default function Hero() {
   return (
-    <section className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white px-6 py-12 flex items-center justify-center">
+    <section id="home" className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white px-6 py-12 flex items-center justify-center">
       <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         {/* Left: Profile with Gradient Circle */}
         <div className="flex justify-center relative">

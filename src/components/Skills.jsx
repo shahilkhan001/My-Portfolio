@@ -24,7 +24,9 @@ export default function Skills() {
 
   return (
     <section id="skills" className="py-24 bg-gradient-to-br from-gray-900 to-gray-800 text-white text-center">
-      <h2 className="text-4xl font-extrabold mb-14 tracking-tight">Technical Skills</h2>
+<h2 className="text-3xl sm:text-4xl font-bold relative inline-block mb-14 after:content-[''] after:block after:h-1 after:w-16 after:bg-cyan-500 after:mx-auto after:mt-3">
+  Technical Skills
+</h2>
 
       <div className="flex flex-wrap justify-center gap-6 px-4 max-w-6xl mx-auto">
         {skills.map((skill, index) => (
