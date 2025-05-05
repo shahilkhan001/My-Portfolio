@@ -60,7 +60,7 @@ export default function Hero() {
 
           {/* Resume Button */}
           <a
-            href="/My_Resume.pdf"
+            href="https://drive.google.com/uc?export=download&id=1XzYvFcrGF0BX2N_PThjPEKaGwy-mgNZd"
             download
             target="_blank"
             rel="noopener noreferrer"
