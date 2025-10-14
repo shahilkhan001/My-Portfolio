@@ -9,6 +9,9 @@ import UtilAppImg from "../assets/U1.jpg";
 import UtilAppImg2 from "../assets/U2.jpg";
 import UtilAppImg3 from "../assets/U3.jpg";
 import BankingImg from "../assets/B1.png";
+import GeoLogin from "../assets/Login.jpg";
+import GeoDashboard from "../assets/Dashboard.jpg";
+import GeoCategories from "../assets/Categories.jpg";
 
 export default function Projects() {
   const [hoveredImage, setHoveredImage] = useState(null);
@@ -26,6 +29,13 @@ export default function Projects() {
         "An Android quiz app with randomized questions, real-time score tracking, a countdown timer, and dark mode support.",
       images: [QuizAppImg, QuizAppImg2, QuizAppImg3],
       link: "https://github.com/shahilkhan001/Quize-App",
+    },
+    {
+      name: "Geography Explorer App",
+      description:
+        "An interactive Android app for learning geography, featuring satellite map exploration and a built-in quiz to test knowledge. The app is powered by Kotlin and includes a secure Firebase login system and a Room database to save user scores.",
+      images: [GeoLogin, GeoDashboard, GeoCategories],
+      link: "https://github.com/shahilkhan001/Geography-Explorer-Android-App",
     },
     {
       name: "Banking System",

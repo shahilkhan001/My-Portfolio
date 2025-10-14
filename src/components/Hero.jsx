@@ -26,7 +26,7 @@ export default function Hero() {
             <span className="text-cyan-400">Mohammad Shahil Khan</span>
           </h1>
           <p className="text-lg text-gray-300 mb-6 max-w-xl">
-            Android Developer | Cyber Security Enthusiast | CSE @ LPU
+            Android App Developer | Cyber Security Enthusiast | CSE @ LPU
           </p>
 
           {/* Social Icons */}
@@ -60,11 +60,9 @@ export default function Hero() {
 
           {/* Resume Button */}
           <a
-            href="https://drive.google.com/uc?export=download&id=1XzYvFcrGF0BX2N_PThjPEKaGwy-mgNZd"
-            download
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-blue-500 to-cyan-400 text-white rounded-full shadow-md hover:scale-105 transition-transform font-semibold text-lg"
+            href="/My_Resume.pdf"
+            download="Mohammad_Shahil_Khan_Resume.pdf"
+            className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-blue-500 to-cyan-400 text-white rounded-full shadow-md hover:shadow-cyan-400/50 hover:scale-105 transition-all duration-300 font-semibold text-lg"
           >
             <i className="fas fa-download"></i> Download Resume
           </a>
