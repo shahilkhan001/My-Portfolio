@@ -1,74 +1,54 @@
 export default function Skills() {
+  const categories = [
+    { 
+      title: "Core Technologies", 
+      skills: ["React.js", "JavaScript (ES6+)", "Kotlin", "Android SDK"] 
+    },
+    { 
+      title: "Interface & Styling", 
+      skills: ["Tailwind CSS", "Modern UI/UX", "Responsive Design", "CSS3"] 
+    },
+    { 
+      title: "Backend Fundamentals", 
+      skills: ["Node.js", "Firebase Auth", "Realtime Database", "REST APIs", "SQL"] 
+    },
+  ];
+
   return (
     <section
       id="skills"
-      className="bg-gradient-to-b from-black via-gray-900 to-black text-white px-6 py-28"
+      className="bg-brand-dark py-32 px-6 border-y border-white/5"
     >
       <div className="max-w-6xl mx-auto">
-        {/* Section Title */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold">
-            Skills & <span className="text-cyan-400">Technologies</span>
+        <div className="flex flex-col md:flex-row justify-between items-start mb-16 gap-8">
+          <h2 className="text-4xl md:text-5xl font-bold text-white">
+            Technical <br />
+            <span className="text-cyan-400">Capabilities</span>
           </h2>
-          <p className="text-gray-400 mt-4 max-w-xl mx-auto">
-            Tools and technologies I use to build modern web interfaces and
-            functional Android applications.
+          <p className="text-gray-400 max-w-sm text-lg">
+            A practical set of tools I use to build clean, responsive, and
+            user-focused web and Android applications.
           </p>
         </div>
 
-        {/* Skills Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
-          {/* Frontend */}
-          <div className="p-8 rounded-2xl bg-white/5 border border-white/10">
-            <h3 className="text-xl font-semibold mb-4 text-cyan-400">
-              Frontend Web Development
-            </h3>
-            <ul className="space-y-2 text-gray-300">
-              <li>React</li>
-              <li>JavaScript (ES6+)</li>
-              <li>HTML5</li>
-              <li>Responsive Web Design</li>
-            </ul>
-          </div>
-
-          {/* Styling */}
-          <div className="p-8 rounded-2xl bg-white/5 border border-white/10">
-            <h3 className="text-xl font-semibold mb-4 text-cyan-400">
-              Styling & UI
-            </h3>
-            <ul className="space-y-2 text-gray-300">
-              <li>Tailwind CSS</li>
-              <li>CSS3</li>
-              <li>Modern UI Practices</li>
-            </ul>
-          </div>
-
-          {/* Android */}
-          <div className="p-8 rounded-2xl bg-white/5 border border-white/10">
-            <h3 className="text-xl font-semibold mb-4 text-cyan-400">
-              Android App Development
-            </h3>
-            <ul className="space-y-2 text-gray-300">
-              <li>Kotlin</li>
-              <li>Android Studio</li>
-              <li>Firebase Authentication</li>
-              <li>Firebase Realtime Database / Firestore</li>
-            </ul>
-          </div>
-
-          {/* Backend & Programming */}
-          <div className="p-8 rounded-2xl bg-white/5 border border-white/10">
-            <h3 className="text-xl font-semibold mb-4 text-cyan-400">
-              Backend, Programming & Tools
-            </h3>
-            <ul className="space-y-2 text-gray-300">
-              <li>Node.js (Basic)</li>
-              <li>REST APIs</li>
-              <li>MySQL</li>
-              <li>Java, C++, Python</li>
-              <li>Git & GitHub</li>
-            </ul>
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          {categories.map((cat) => (
+            <div key={cat.title} className="space-y-6">
+              <h3 className="text-cyan-400 font-mono text-xs tracking-[0.3em] uppercase opacity-70 border-l-2 border-cyan-400 pl-4">
+                {cat.title}
+              </h3>
+              <div className="flex flex-wrap gap-3">
+                {cat.skills.map((skill) => (
+                  <div
+                    key={skill}
+                    className="px-5 py-3 rounded-xl bg-white/[0.03] border border-white/10 text-white hover:border-cyan-400 hover:bg-white/[0.05] transition-all cursor-default text-sm font-medium"
+                  >
+                    {skill}
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

@@ -1,3 +1,5 @@
+import { FiAward, FiExternalLink } from "react-icons/fi";
+
 export default function Certifications() {
   const certifications = [
     {
@@ -16,51 +18,51 @@ export default function Certifications() {
       link: "https://www.udemy.com/certificate/UC-edabe3d1-ac0c-4727-a2ef-a14ff844b86d/",
     },
     {
-      title: "C++ Programming",
-      platform: "Techvanto Academy",
-      link: "https://drive.google.com/file/d/1ou-WlISyvJ1W-LOEh1S1JAOM2VJ8y9Bp/view?usp=sharing",
+      title: "Applied Generative AI",
+      platform: "Infosys Springboard",
+      link: "#", // Add link if available
     },
   ];
 
   return (
-    <section
-      id="certifications"
-      className="bg-black text-white px-6 py-24"
-    >
+    <section id="certifications" className="bg-brand-dark text-white px-6 py-32 border-t border-white/5">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
-        <div className="mb-12 text-center">
-          <h2 className="text-3xl font-bold">
-            Certifications
-          </h2>
-          <p className="text-gray-400 mt-3">
-            A selection of verified certifications supporting my technical background.
+        <div className="mb-16 text-center">
+          <h2 className="text-4xl font-bold mb-4">Verified <span className="text-cyan-400 font-light italic">Credentials</span></h2>
+          <p className="text-gray-400 max-w-lg mx-auto">
+            Technical certifications that validate my expertise in programming, cloud, and emerging technologies.
           </p>
         </div>
 
-        {/* List */}
-        <ul className="space-y-4">
+        {/* Credentials List */}
+        <div className="space-y-4">
           {certifications.map((cert, index) => (
-            <li
+            <div
               key={index}
-              className="flex flex-col sm:flex-row sm:items-center sm:justify-between p-5 rounded-xl bg-white/5 border border-white/10"
+              className="group flex flex-col sm:flex-row sm:items-center sm:justify-between p-6 rounded-2xl bg-white/[0.03] border border-white/5 hover:border-cyan-400/30 hover:bg-white/[0.05] transition-all"
             >
-              <div>
-                <p className="font-medium">{cert.title}</p>
-                <p className="text-sm text-gray-400">{cert.platform}</p>
+              <div className="flex items-center gap-5">
+                <div className="w-12 h-12 rounded-xl bg-cyan-500/10 flex items-center justify-center text-cyan-400 group-hover:bg-cyan-500 group-hover:text-black transition-all">
+                  <FiAward size={24} />
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg text-white group-hover:text-cyan-400 transition-colors">{cert.title}</h3>
+                  <p className="text-sm text-gray-500 font-medium tracking-wide uppercase">{cert.platform}</p>
+                </div>
               </div>
 
               <a
                 href={cert.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-3 sm:mt-0 text-sm text-cyan-400 hover:underline"
+                className="mt-4 sm:mt-0 inline-flex items-center gap-2 text-sm font-bold text-gray-400 hover:text-white transition-colors border-b border-transparent hover:border-white pb-1"
               >
-                View Certificate →
+                Verify Certificate <FiExternalLink size={14} />
               </a>
-            </li>
+            </div>
           ))}
-        </ul>
+        </div>
       </div>
     </section>
   );
