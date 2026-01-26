@@ -2,57 +2,83 @@ import { useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 
 export default function Navbar() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [open, setOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  const navItems = [
+    { name: "Home", href: "#home" },
+    { name: "About", href: "#about" },
+    { name: "Skills", href: "#skills" },
+    { name: "Work", href: "#projects" },
+  ];
 
   return (
-    <nav className="bg-gradient-to-r from-blue-950 via-slate-900 to-indigo-950 text-white p-4 shadow-md sticky top-0 z-50">
-      <div className="container mx-auto flex justify-between items-center">
-        <h1 className="text-xl font-bold text-cyan-400">Shahil.dev</h1>
+    <header className="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-black/40 border-b border-white/10">
+      <nav className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        {/* Brand */}
+        <a
+          href="#home"
+          className="text-xl font-semibold tracking-wide text-white"
+        >
+          Shahil<span className="text-cyan-400">.dev</span>
+        </a>
 
-        {/* Desktop Menu */}
-        <ul className="hidden md:flex space-x-6 text-sm">
-          {["home", "about", "skills", "projects", "certifications", "contact"].map((section) => (
-            <li key={section}>
+        {/* Desktop Nav */}
+        <ul className="hidden md:flex items-center gap-8 text-sm text-gray-300">
+          {navItems.map((item) => (
+            <li key={item.name}>
               <a
-                href={`#${section}`}
-                className="hover:text-cyan-400 transition duration-300 capitalize"
+                href={item.href}
+                className="hover:text-white transition"
               >
-                {section}
+                {item.name}
               </a>
             </li>
           ))}
         </ul>
 
-        {/* Mobile Hamburger Menu */}
-        <div className="md:hidden">
-          <button onClick={toggleMenu} className="text-2xl text-cyan-300">
-            {isMenuOpen ? <FiX /> : <FiMenu />}
-          </button>
-        </div>
-      </div>
+        {/* CTA Button */}
+        <a
+          href="#contact"
+          className="hidden md:inline-block px-5 py-2 rounded-full bg-cyan-500 text-black font-medium text-sm hover:bg-cyan-400 transition"
+        >
+          Contact
+        </a>
 
-      {/* Mobile Dropdown Menu */}
-      {isMenuOpen && (
-        <div className="md:hidden bg-slate-900 text-white p-6 rounded-b-xl shadow-lg">
-          <ul className="flex flex-col items-center space-y-4">
-            {["home", "about", "skills", "projects", "certifications", "contact"].map((section) => (
-              <li key={section}>
+        {/* Mobile Menu Button */}
+        <button
+          aria-label={open ? "Close menu" : "Open menu"}
+          className="md:hidden text-2xl text-white"
+          onClick={() => setOpen(!open)}
+        >
+          {open ? <FiX /> : <FiMenu />}
+        </button>
+      </nav>
+
+      {/* Mobile Menu */}
+      {open && (
+        <div className="md:hidden bg-black/90 backdrop-blur-lg border-t border-white/10">
+          <ul className="flex flex-col items-center gap-6 py-8 text-gray-300">
+            {navItems.map((item) => (
+              <li key={item.name}>
                 <a
-                  href={`#${section}`}
-                  onClick={() => setIsMenuOpen(false)}
-                  className="hover:text-cyan-400 transition capitalize"
+                  href={item.href}
+                  onClick={() => setOpen(false)}
+                  className="text-lg hover:text-white transition"
                 >
-                  {section}
+                  {item.name}
                 </a>
               </li>
             ))}
+            <a
+              href="#contact"
+              onClick={() => setOpen(false)}
+              className="mt-4 px-6 py-2 rounded-full bg-cyan-500 text-black font-medium hover:bg-cyan-400 transition"
+            >
+              Contact
+            </a>
           </ul>
         </div>
       )}
-    </nav>
+    </header>
   );
 }

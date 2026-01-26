@@ -1,155 +1,83 @@
-import React, { useState } from "react";
-import { motion } from "framer-motion";
-
-// Import images
-import QuizAppImg from "../assets/Q1.jpg";
-import QuizAppImg2 from "../assets/Q2.jpg";
-import QuizAppImg3 from "../assets/Q3.jpg";
-import UtilAppImg from "../assets/U1.jpg";
-import UtilAppImg2 from "../assets/U2.jpg";
-import UtilAppImg3 from "../assets/U3.jpg";
-import BankingImg from "../assets/B1.png";
-import GeoLogin from "../assets/Login.jpg";
-import GeoDashboard from "../assets/Dashboard.jpg";
-import GeoCategories from "../assets/Categories.jpg";
-
 export default function Projects() {
-  const [hoveredImage, setHoveredImage] = useState(null);
-
   const projects = [
     {
-      name: "Android App - UtilMonitor",
-      description: "An Android app that tracks utility usage with real-time updates.",
-      images: [UtilAppImg, UtilAppImg2, UtilAppImg3],
-      link: "https://github.com/shahilkhan001/UtilMonitor",
-    },
-    {
-      name: "Educational Quiz App",
+      title: "Geography Explorer – Learning App",
       description:
-        "An Android quiz app with randomized questions, real-time score tracking, a countdown timer, and dark mode support.",
-      images: [QuizAppImg, QuizAppImg2, QuizAppImg3],
-      link: "https://github.com/shahilkhan001/Quize-App",
-    },
-    {
-      name: "Geography Explorer App",
-      description:
-        "An interactive Android app for learning geography, featuring satellite map exploration and a built-in quiz to test knowledge. The app is powered by Kotlin and includes a secure Firebase login system and a Room database to save user scores.",
-      images: [GeoLogin, GeoDashboard, GeoCategories],
+        "An interactive Android app designed to explore geographical concepts through maps and quizzes. The app includes user authentication and local data storage to track learning progress.",
+      tech: ["Kotlin", "Firebase Auth", "Room Database","Google Maps API"],
       link: "https://github.com/shahilkhan001/Geography-Explorer-Android-App",
     },
     {
-      name: "Banking System",
+      title: "UtilMonitor – Utility Tracking App",
       description:
-        "A C++ console-based banking system featuring account creation, secure login, and transaction management.",
-      images: [BankingImg],
-      link: "https://github.com/shahilkhan001/DSA-Practice/blob/project/BankingSystem.cpp",
+        "A personal Android application built to track and monitor utility usage in a simple and structured way. The project focuses on clean UI, structured data handling, and real-time updates using Firebase.",
+      tech: ["Kotlin", "Android Studio", "Firebase"],
+      link: "https://github.com/shahilkhan001/UtilMonitor",
     },
   ];
-
-  const handleMouseEnter = (e, image, alt) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    const imageWidth = 300;
-    const imageHeight = 500;
-    const offset = 20;
-
-    let x = rect.right + offset;
-    let y = rect.top;
-
-    if (x + imageWidth > window.innerWidth) {
-      x = rect.left - imageWidth - offset;
-    }
-
-    if (y + imageHeight > window.innerHeight) {
-      y = window.innerHeight - imageHeight - offset;
-    }
-
-    x = Math.max(x, offset);
-    y = Math.max(y, offset);
-
-    setHoveredImage({ src: image, alt, x, y });
-  };
 
   return (
     <section
       id="projects"
-      className="py-20 bg-gradient-to-b from-blue-950 via-slate-900 to-indigo-950 text-white relative"
+      className="bg-black text-white px-6 py-28"
     >
-      {/* Title */}
-      <div className="text-center mb-12">
-        <h2 className="text-3xl sm:text-4xl font-bold relative inline-block after:content-[''] after:block after:h-1 after:w-16 after:bg-cyan-500 after:mx-auto after:mt-3">
-          My Projects
-        </h2>
-        <p className="text-sm text-gray-400 mt-3 max-w-xl mx-auto">
-          A showcase of some of my recent work in Android and system development.
-        </p>
-      </div>
-
-      {/* Projects Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-6 relative z-10">
-        {projects.map((project, index) => (
-          <motion.div
-            key={index}
-            className="bg-white/10 backdrop-blur-lg border border-white/10 rounded-2xl p-6 shadow-xl transition-transform hover:scale-[1.03] hover:shadow-2xl duration-300"
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{
-              type: "spring",
-              stiffness: 300,
-              damping: 25,
-              delay: index * 0.3,
-            }}
-          >
-            <h3 className="text-xl font-bold mb-2">{project.name}</h3>
-            <p className="text-gray-300 mb-4 text-sm">{project.description}</p>
-
-            {/* Images */}
-            <div className="flex flex-wrap justify-center gap-3 mb-4">
-              {project.images.map((image, imgIndex) => (
-                <div
-                  key={imgIndex}
-                  className="w-24 h-24 rounded-lg overflow-hidden cursor-pointer transition duration-300 hover:scale-105"
-                  onMouseEnter={(e) =>
-                    handleMouseEnter(e, image, `${project.name} Screenshot ${imgIndex + 1}`)
-                  }
-                  onMouseLeave={() => setHoveredImage(null)}
-                >
-                  <img
-                    src={image}
-                    alt={`${project.name} Screenshot ${imgIndex + 1}`}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              ))}
-            </div>
-
-            <a
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block mt-2 px-4 py-2 bg-cyan-500 hover:bg-cyan-400 text-white rounded-md transition-colors duration-300 text-sm font-medium"
-            >
-              View Project
-            </a>
-          </motion.div>
-        ))}
-      </div>
-
-      {/* Floating Hover Preview */}
-      {hoveredImage && (
-        <div
-          className="fixed z-[9999] pointer-events-none transition-transform duration-300 ease-in-out shadow-2xl"
-          style={{
-            top: hoveredImage.y,
-            left: hoveredImage.x,
-          }}
-        >
-          <img
-            src={hoveredImage.src}
-            alt={hoveredImage.alt}
-            className="max-w-[300px] max-h-[500px] rounded-xl border border-white/20"
-          />
+      <div className="max-w-6xl mx-auto">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold">
+            Selected <span className="text-cyan-400">Work</span>
+          </h2>
+          <p className="text-gray-400 mt-4 max-w-xl mx-auto">
+            A selection of personal and practice projects that reflect my
+            approach to building functional and well-structured applications.
+          </p>
         </div>
-      )}
+
+        {/* Projects Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+          {projects.map((project, index) => (
+            <div
+              key={index}
+              className="p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-cyan-400/40 transition"
+            >
+              <h3 className="text-xl font-semibold mb-3">
+                {project.title}
+              </h3>
+
+              <p className="text-gray-300 text-sm leading-relaxed mb-5">
+                {project.description}
+              </p>
+
+              {/* Tech Stack */}
+              <div className="flex flex-wrap gap-2 mb-6">
+                {project.tech.map((item, i) => (
+                  <span
+                    key={i}
+                    className="px-3 py-1 text-xs rounded-full bg-white/10 border border-white/10 text-gray-300"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
+
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block text-sm font-medium text-cyan-400 hover:underline"
+              >
+                View on GitHub →
+              </a>
+            </div>
+          ))}
+        </div>
+
+        {/* Future Projects Note */}
+        <div className="mt-16 text-center text-gray-400 text-sm">
+          More real-world projects will be added here as I continue building
+          and working with clients.
+        </div>
+      </div>
     </section>
   );
 }
