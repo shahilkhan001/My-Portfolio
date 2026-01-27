@@ -22,7 +22,7 @@ export default function Projects() {
         "Scalable component-based structure",
       ],
       live: "/fitzone",
-      link: "https://github.com/shahilkhan001", // replace with exact repo/subfolder if needed
+      link: "https://github.com/shahilkhan001/My-Portfolio/tree/main/src/projects/fitzone", // replace with exact repo/subfolder if needed
     },
 
     // 🎓 ACADEMIC PROJECTS (AFTER)
