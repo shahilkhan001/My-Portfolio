@@ -1,3 +1,4 @@
+import { Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
 
 import Navbar from "./components/Navbar";
@@ -8,8 +9,9 @@ import Services from "./components/Services";
 import Projects from "./components/Projects";
 import Certifications from "./components/Certifications";
 import Contact from "./components/Contact";
-import CTA from "./components/CTA";
 import Footer from "./components/Footer";
+
+import FitZone from "./projects/fitzone/FitZone";
 
 function App() {
   useEffect(() => {
@@ -17,24 +19,30 @@ function App() {
   }, []);
 
   return (
-  <div className="font-sans text-white bg-black">
-    <Navbar />
+    <Routes>
+      {/* Portfolio */}
+      <Route
+        path="/"
+        element={
+          <>
+            <Navbar />
+            <main>
+              <Hero />
+              <About />
+              <Skills />
+              <Services />
+              <Projects />
+              <Certifications />
+              <Contact />
+            </main>
+            <Footer />
+          </>
+        }
+      />
 
-    <main id="main-content">
-      <Hero />
-      <About />
-      <Skills />
-      <Services />
-      <Projects />
-      <Certifications />
-      <CTA />
-      <Contact />
-    </main>
-
-    <Footer />
-  </div>
-);
-
+      <Route path="/fitzone" element={<FitZone />} />
+    </Routes>
+  );
 }
 
 export default App;

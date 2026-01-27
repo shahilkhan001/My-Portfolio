@@ -8,10 +8,8 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Background change logic
       setScrolled(window.scrollY > 50);
 
-      // Scroll progress logic
       const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
       const progress = (window.scrollY / totalHeight) * 100;
       setScrollProgress(progress);
@@ -43,25 +41,28 @@ export default function Navbar() {
         scrolled ? "bg-black/80 backdrop-blur-xl border-b border-white/10 py-3" : "bg-transparent py-5"
       }`}
     >
-      {/* Scroll Progress Bar */}
       <div 
         className="absolute top-0 left-0 h-[2px] bg-cyan-500 transition-all duration-150"
         style={{ width: `${scrollProgress}%` }}
+        role="progressbar"
+        aria-valuemin="0"
+        aria-valuemax="100"
+        aria-valuenow={scrollProgress}
+        aria-label="Scroll progress"
       ></div>
 
       <nav className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        {/* Brand */}
         <div className="flex items-center gap-4">
           <a
             href="#home"
             className="text-2xl font-bold tracking-tighter text-white group"
             onClick={(e) => handleNavClick(e, "#home")}
+            aria-label="Shahil Dev Home"
           >
             SHAHIL<span className="text-cyan-400 transition-colors group-hover:text-white">.DEV</span>
           </a>
         </div>
 
-        {/* Desktop Navigation */}
         <ul className="hidden lg:flex items-center gap-8 text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400">
           {navItems.map((item) => (
             <li key={item.name}>
@@ -76,7 +77,6 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* Right Actions */}
         <div className="hidden md:flex items-center gap-6">
           <div className="flex items-center gap-4 border-r border-white/10 pr-6">
             <a 
@@ -84,7 +84,7 @@ export default function Navbar() {
               target="_blank" 
               rel="noreferrer" 
               className="text-gray-400 hover:text-white transition-colors"
-              aria-label="GitHub"
+              aria-label="Visit Shahil's GitHub Profile"
             >
               <FiGithub size={18} />
             </a>
@@ -93,7 +93,7 @@ export default function Navbar() {
               target="_blank" 
               rel="noreferrer" 
               className="text-gray-400 hover:text-white transition-colors"
-              aria-label="LinkedIn"
+              aria-label="Visit Shahil's LinkedIn Profile"
             >
               <FiLinkedin size={18} />
             </a>
@@ -106,17 +106,16 @@ export default function Navbar() {
           </a>
         </div>
 
-        {/* Mobile Toggle */}
         <button
           className="lg:hidden text-2xl text-white p-2 rounded-lg bg-white/5 border border-white/10"
           onClick={() => setOpen(!open)}
-          aria-label="Toggle menu"
+          aria-label={open ? "Close menu" : "Open navigation menu"}
+          aria-expanded={open}
         >
           {open ? <FiX /> : <FiMenu />}
         </button>
       </nav>
 
-      {/* Mobile Menu Overlay */}
       <div 
         className={`fixed inset-0 bg-black/98 backdrop-blur-2xl transition-all duration-500 lg:hidden ${
           open ? "opacity-100 visible" : "opacity-0 invisible"
@@ -124,7 +123,13 @@ export default function Navbar() {
         style={{ top: "0", height: "100vh" }}
       >
         <div className="flex justify-end p-6">
-           <button onClick={() => setOpen(false)} className="text-white text-3xl"><FiX /></button>
+           <button 
+             onClick={() => setOpen(false)} 
+             className="text-white text-3xl"
+             aria-label="Close menu"
+           >
+             <FiX />
+           </button>
         </div>
         <ul className="flex flex-col items-center justify-center gap-8 h-[70%] text-gray-300">
           {navItems.map((item) => (

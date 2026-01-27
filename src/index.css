@@ -1,6 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-html {
+
+@layer base {
+  html {
     scroll-behavior: smooth;
+  }
+  
+  /* Performance Fix: Ensures text is visible during font load */
+  /* This helps both your portfolio and FitZone scores */
+  * {
+    font-display: swap;
+  }
+
+  /* Performance Fix: Prevents images from causing layout shifts */
+  img {
+    content-visibility: auto;
+  }
 }
