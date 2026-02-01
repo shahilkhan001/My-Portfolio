@@ -11,8 +11,6 @@ import Certifications from "./components/Certifications";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
-import FitZone from "./projects/fitzone/FitZone";
-
 function App() {
   useEffect(() => {
     document.title = "Shahil | Frontend Developer";
@@ -20,7 +18,6 @@ function App() {
 
   return (
     <Routes>
-      {/* Portfolio */}
       <Route
         path="/"
         element={
@@ -39,8 +36,6 @@ function App() {
           </>
         }
       />
-
-      <Route path="/fitzone" element={<FitZone />} />
     </Routes>
   );
 }

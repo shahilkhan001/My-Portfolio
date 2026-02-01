@@ -1,31 +1,37 @@
 import { useState } from "react";
-import { FiGithub, FiExternalLink, FiX, FiCheck, FiArrowRight } from "react-icons/fi";
+import {
+  FiGithub,
+  FiExternalLink,
+  FiX,
+  FiCheck,
+  FiArrowRight,
+} from "react-icons/fi";
 
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState(null);
 
   const projects = [
-    // ✅ FITZONE – CLIENT STYLE DEMO (FIRST)
+    // ✅ FITZONE – STANDALONE PRODUCTION PROJECT
     {
       title: "FitZone – Fitness Center Website",
-      category: "Client-Style Demo",
+      category: "Standalone Production Project",
       shortDesc:
-        "A modern, responsive gym website built as a client-style demo to showcase real-world layout, UX, and conversion-focused sections.",
+        "A modern, responsive fitness website built as a client-style demo and deployed as a standalone React application.",
       longDesc:
-        "FitZone is a frontend-focused client-style demo project designed to represent how a real fitness center website could look and function. The project demonstrates business-oriented sections such as programs, pricing, testimonials, and contact flows, with an emphasis on responsive design, clean UI, and smooth navigation.",
+        "FitZone is a standalone frontend project designed to simulate a real-world fitness center website. It focuses on business-oriented sections such as programs, pricing, testimonials, and contact flows. The project emphasizes clean UI, responsive layouts, smooth navigation, and production-ready structure, and is deployed independently using Vercel.",
       tech: ["React", "Tailwind CSS", "Responsive Design"],
       features: [
+        "Standalone production deployment",
         "Multi-section business landing page",
-        "Smooth in-page navigation",
+        "Mobile-first responsive navigation",
         "Conversion-focused CTAs",
-        "Mobile-first responsive layout",
-        "Scalable component-based structure",
+        "Reusable, scalable React components",
       ],
-      live: "/fitzone",
-      link: "https://github.com/shahilkhan001/My-Portfolio/tree/main/src/projects/fitzone", // replace with exact repo/subfolder if needed
+      live: "https://fitzon-fitness.vercel.app/",
+      link: "https://github.com/shahilkhan001/fitzon-fitness-website",
     },
 
-    // 🎓 ACADEMIC PROJECTS (AFTER)
+    // 🎓 ACADEMIC PROJECTS
     {
       title: "Geography Explorer",
       category: "Academic Project",
@@ -63,14 +69,16 @@ export default function Projects() {
   return (
     <section id="projects" className="bg-brand-dark text-white px-6 py-32">
       <div className="max-w-6xl mx-auto">
+        {/* HEADER */}
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
           <div>
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Featured <span className="text-cyan-400 font-light italic">Work.</span>
+              Featured{" "}
+              <span className="text-cyan-400 font-light italic">Work.</span>
             </h2>
             <p className="text-gray-400 max-w-md text-lg leading-relaxed">
-              A selection of client-style demos and academic projects showcasing
-              frontend development, UI structure, and application design.
+              A selection of standalone production projects and academic work
+              showcasing frontend development and application design.
             </p>
           </div>
           <a
@@ -98,7 +106,10 @@ export default function Projects() {
                   <span className="text-cyan-400 text-xs font-bold uppercase tracking-widest">
                     {project.category}
                   </span>
-                  <FiGithub size={24} className="text-gray-600 group-hover:text-white transition-colors" />
+                  <FiGithub
+                    size={24}
+                    className="text-gray-600 group-hover:text-white transition-colors"
+                  />
                 </div>
 
                 <h3 className="text-3xl font-bold mb-4 group-hover:text-cyan-400 transition-colors leading-tight">
@@ -121,7 +132,8 @@ export default function Projects() {
                 </div>
 
                 <div className="flex items-center gap-2 text-sm font-bold text-white group-hover:text-cyan-400 transition-colors">
-                  Explore Case Study <FiArrowRight className="group-hover:translate-x-2 transition-transform" />
+                  Explore Case Study{" "}
+                  <FiArrowRight className="group-hover:translate-x-2 transition-transform" />
                 </div>
               </div>
             </div>
@@ -158,7 +170,10 @@ export default function Projects() {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
                 {selectedProject.features.map((f, i) => (
-                  <div key={i} className="flex items-center gap-3 text-gray-400 text-sm">
+                  <div
+                    key={i}
+                    className="flex items-center gap-3 text-gray-400 text-sm"
+                  >
                     <FiCheck className="text-cyan-400 flex-shrink-0" /> {f}
                   </div>
                 ))}
