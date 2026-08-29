@@ -2,10 +2,12 @@ import type { ComponentPropsWithoutRef, ReactNode } from "react";
 import { Container } from "@/components/ui/container";
 
 type SectionTone = "page" | "surface" | "muted" | "dark";
+type SectionSpacing = "default" | "compact";
 
 type SectionProps = ComponentPropsWithoutRef<"section"> & {
   children: ReactNode;
   tone?: SectionTone;
+  spacing?: SectionSpacing;
   containerClassName?: string;
 };
 
@@ -16,16 +18,22 @@ const toneClasses: Record<SectionTone, string> = {
   dark: "bg-surface-dark text-ink-inverse",
 };
 
+const spacingClasses: Record<SectionSpacing, string> = {
+  default: "py-20 sm:py-24 lg:py-32",
+  compact: "py-14 sm:py-16 lg:py-20",
+};
+
 export function Section({
   children,
   className = "",
   containerClassName = "",
   tone = "page",
+  spacing = "default",
   ...props
 }: SectionProps) {
   return (
     <section
-      className={`py-20 sm:py-24 lg:py-32 ${toneClasses[tone]} ${className}`}
+      className={`${spacingClasses[spacing]} ${toneClasses[tone]} ${className}`}
       {...props}
     >
       <Container className={containerClassName}>{children}</Container>
