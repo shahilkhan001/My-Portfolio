@@ -4,7 +4,7 @@ import { profile } from "@/content/profile";
 
 export function Hero() {
   return (
-    <section className="border-b border-border bg-page">
+    <section id="top" className="border-b border-border bg-page">
       <Container className="grid min-h-[calc(100svh-4.5rem)] items-center gap-16 py-20 lg:grid-cols-12 lg:py-28">
         <div className="lg:col-span-9 xl:col-span-8">
           <div className="mb-8 flex flex-wrap items-center gap-x-4 gap-y-2 font-mono text-xs uppercase tracking-[0.14em] text-ink-muted">

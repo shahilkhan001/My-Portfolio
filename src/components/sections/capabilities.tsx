@@ -6,7 +6,7 @@ export function CapabilitiesSection() {
   return (
     <Section id="capabilities" tone="page">
       <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
-        <div className="lg:col-span-4">
+        <div className="lg:sticky lg:top-24 lg:col-span-4 lg:self-start">
           <SectionHeading
             eyebrow="Capabilities"
             title="A practical engineering toolkit across web, mobile, and integrations."
@@ -35,12 +35,12 @@ export function CapabilitiesSection() {
 
                 <ul
                   aria-label={`${capability.title} skills`}
-                  className="mt-6 flex flex-wrap gap-x-4 gap-y-2"
+                  className="mt-6 flex flex-wrap gap-2"
                 >
                   {capability.skills.map((skill) => (
                     <li
                       key={skill}
-                      className="font-mono text-xs text-ink-subtle"
+                      className="rounded-md border border-border-strong bg-accent-soft px-2.5 py-1.5 font-mono text-xs text-accent transition-colors duration-200 hover:border-accent hover:bg-accent hover:text-white"
                     >
                       {skill}
                     </li>

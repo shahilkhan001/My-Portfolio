@@ -26,6 +26,7 @@ export function ActionLink({
   variant = "primary",
   external = false,
   showArrow = false,
+  href,
   ...props
 }: ActionLinkProps) {
   const sharedClasses =
@@ -33,17 +34,33 @@ export function ActionLink({
       ? "inline-flex min-h-11 items-center gap-2 font-medium transition-colors duration-200"
       : "inline-flex min-h-11 items-center justify-center gap-2 rounded-md px-5 py-2.5 font-medium transition-colors duration-200";
 
-  return (
-    <Link
-      className={`${sharedClasses} ${variantClasses[variant]} ${className}`}
-      target={external ? "_blank" : undefined}
-      rel={external ? "noreferrer" : undefined}
-      {...props}
-    >
+  const classes = `${sharedClasses} ${variantClasses[variant]} ${className}`;
+  const content = (
+    <>
       <span>{children}</span>
       {showArrow ? (
         <ArrowUpRight aria-hidden="true" className="size-4" strokeWidth={1.8} />
       ) : null}
+    </>
+  );
+
+  if (typeof href === "string" && href.startsWith("/#")) {
+    return (
+      <a className={classes} href={href} {...props}>
+        {content}
+      </a>
+    );
+  }
+
+  return (
+    <Link
+      className={classes}
+      href={href}
+      target={external ? "_blank" : undefined}
+      rel={external ? "noreferrer" : undefined}
+      {...props}
+    >
+      {content}
     </Link>
   );
 }

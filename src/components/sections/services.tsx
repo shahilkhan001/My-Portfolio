@@ -6,7 +6,7 @@ export function ServicesSection() {
   return (
     <Section id="services" tone="muted">
       <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
-        <div className="lg:col-span-4">
+        <div className="lg:sticky lg:top-24 lg:col-span-4 lg:self-start">
           <SectionHeading
             eyebrow="Services"
             title="Selected ways I can contribute beyond a full-time role."

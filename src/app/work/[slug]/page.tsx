@@ -55,7 +55,7 @@ export default async function ProjectPage({
               Back to Work
             </ActionLink>
 
-            <p className="mt-12 font-mono text-xs font-medium uppercase tracking-[0.14em] text-accent">
+            <p className="mt-12 font-mono text-xs font-medium uppercase tracking-[0.14em] text-ink-subtle">
               {project.eyebrow}
             </p>
 
@@ -66,12 +66,12 @@ export default async function ProjectPage({
             {project.technologies.length > 0 ? (
               <ul
                 aria-label={`${project.title} technologies`}
-                className="mt-8 flex flex-wrap gap-x-4 gap-y-2"
+                className="mt-8 flex flex-wrap gap-2"
               >
                 {project.technologies.map((technology) => (
                   <li
                     key={technology}
-                    className="font-mono text-xs text-ink-subtle"
+                    className="rounded-md border border-border-strong bg-accent-soft px-2.5 py-1.5 font-mono text-xs text-accent transition-colors duration-200 hover:border-accent hover:bg-accent hover:text-white"
                   >
                     {technology}
                   </li>

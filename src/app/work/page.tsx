@@ -38,7 +38,7 @@ export default function WorkPage() {
                 </span>
 
                 <div>
-                  <p className="font-mono text-xs font-medium uppercase tracking-[0.14em] text-accent">
+                  <p className="font-mono text-xs font-medium uppercase tracking-[0.14em] text-ink-subtle">
                     {project.eyebrow}
                   </p>
 
@@ -47,13 +47,15 @@ export default function WorkPage() {
                       {project.title}
                     </h2>
 
-                    <ActionLink
-                      href={`/work/${project.slug}`}
-                      variant="text"
-                      showArrow
-                    >
-                      View Project
-                    </ActionLink>
+                    <div className="hidden sm:block">
+                      <ActionLink
+                        href={`/work/${project.slug}`}
+                        variant="text"
+                        showArrow
+                      >
+                        View Project
+                      </ActionLink>
+                    </div>
                   </div>
 
                   <p className="mt-5 max-w-2xl text-base leading-7 text-ink-muted sm:text-lg sm:leading-8">
@@ -63,18 +65,28 @@ export default function WorkPage() {
                   {project.technologies.length > 0 ? (
                     <ul
                       aria-label={`${project.title} technologies`}
-                      className="mt-6 flex flex-wrap gap-x-4 gap-y-2"
+                      className="mt-6 flex flex-wrap gap-2"
                     >
                       {project.technologies.map((technology) => (
                         <li
                           key={technology}
-                          className="font-mono text-xs text-ink-subtle"
+                          className="rounded-md border border-border-strong bg-accent-soft px-2.5 py-1.5 font-mono text-xs text-accent transition-colors duration-200 hover:border-accent hover:bg-accent hover:text-white"
                         >
                           {technology}
                         </li>
                       ))}
                     </ul>
                   ) : null}
+
+                  <div className="mt-6 sm:hidden">
+                    <ActionLink
+                      href={`/work/${project.slug}`}
+                      variant="text"
+                      showArrow
+                    >
+                      View Project
+                    </ActionLink>
+                  </div>
                 </div>
               </article>
             ))}

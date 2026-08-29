@@ -4,7 +4,7 @@ import { Container } from "@/components/ui/container";
 export function SiteFooter() {
   return (
     <footer className="border-t border-border bg-page">
-      <Container className="grid gap-8 py-10 sm:grid-cols-2 sm:items-end lg:py-12">
+      <Container className="grid gap-8 py-10 sm:grid-cols-2 sm:items-center lg:py-12">
         <div>
           <p className="font-mono text-sm font-semibold tracking-[-0.02em] text-ink">
             Mohammad Shahil Khan

@@ -8,7 +8,7 @@ export const projects = [
     summary:
       "A safety-focused web application with location-aware features, SOS workflows, real-time communication, and authenticated access.",
     description:
-      "Tourist Safety brings together GPS-based functionality, emergency-oriented workflows, real-time updates, and user authentication in a full-stack application.",
+      "Tourist Safety is a full-stack safety platform designed around location-aware assistance and emergency response. It combines GPS-based tracking, SOS workflows, real-time admin-user communication through Socket.IO, and JWT-based authentication, with MongoDB supporting application data and live synchronization.",
     technologies: [
       "React",
       "Node.js",
@@ -25,7 +25,7 @@ export const projects = [
       },
       {
         label: "GitHub",
-        href: "https://github.com/shahilkhan001/Tourist-Safety",
+        href: "https://github.com/shahilkhan001/Tourist-Safety-Application",
       },
     ],
     highlights: [
@@ -42,7 +42,7 @@ export const projects = [
     summary:
       "An Android travel application built with Kotlin, Firebase, and Gemini API integration.",
     description:
-      "Bharat Bhraman is an Android application focused on travel exploration, combining native Android development with Firebase services and AI-enabled functionality through the Gemini API.",
+      "Bharat Bhraman is a native Android tourism application that combines travel exploration with AI-enabled features through the Gemini API. The app uses Firebase for authentication and cloud-backed functionality, includes biometric security and multilingual tourism features, and was published on Google Play.",
     technologies: ["Kotlin", "Android", "Firebase", "Gemini API"],
     featured: true,
     links: [
@@ -67,10 +67,11 @@ export const projects = [
     title: "FitZone",
     eyebrow: "Business Website",
     summary:
-      "A fitness-focused business website demonstrating frontend implementation and practical website delivery.",
+      "A responsive fitness business website built with React and Tailwind CSS, featuring structured sections for programs, pricing, testimonials, and contact flows.",
     description:
-      "FitZone is an independent business-style website project used to demonstrate practical frontend development and presentation for a fitness-oriented brand.",
-    technologies: [],
+      "FitZone is an independently deployed, client-style fitness website built to demonstrate practical business-facing frontend development. It uses reusable React components, responsive layouts, smooth section navigation, and structured content for programs, pricing, testimonials, and contact.",
+
+    technologies: ["React.js", "Tailwind CSS", "JavaScript", "Vercel"],
     featured: true,
     links: [
       {
@@ -91,34 +92,49 @@ export const projects = [
   {
     slug: "geoai-smart-explorer",
     title: "GeoAI Smart Explorer",
-    eyebrow: "AI-Enabled Web Project",
+    eyebrow: "Android Application",
     summary:
-      "An AI-enabled geography exploration project evolved from an earlier Geography Explorer application.",
+      "An Android geography learning application built with Kotlin, Google Maps API, and Firebase for interactive maps, location search, authentication, quizzes, and score tracking.",
     description:
-      "GeoAI Smart Explorer develops the earlier Geography Explorer concept into a broader AI-enabled exploration experience.",
-    technologies: [],
+      "GeoAI Smart Explorer is an Android application for interactive geographical learning and exploration. It integrates Google Maps API for live maps, location search, and multiple map views, while Firebase supports authentication and quiz and score-tracking workflows.",
+
+    technologies: ["Kotlin", "Android SDK", "Google Maps API", "Firebase"],
     featured: false,
-    links: [],
+    links: [
+      {
+        label: "GitHub",
+        href: "https://github.com/shahilkhan001/GeoAI-Smart-Explorer",
+      },
+    ],
     highlights: [
-      "Evolution of the earlier Geography Explorer project",
-      "Geography-focused exploration experience",
-      "AI-enabled project direction",
+      "Interactive geographical learning with Google Maps",
+      "Location search and multiple map views",
+      "Firebase-backed authentication",
+      "Quiz and score tracking",
     ],
   },
   {
     slug: "utilmonitor",
     title: "UtilMonitor",
-    eyebrow: "Software Project",
+    eyebrow: "Android Application",
     summary:
-      "An earlier software project retained as supporting evidence of hands-on application development.",
+      "An Android utility-tracking application built with Kotlin and Firebase for real-time usage updates, cloud-backed data, and simple consumption analytics.",
     description:
-      "UtilMonitor is part of the supporting project archive and represents earlier practical software development work.",
-    technologies: [],
+      "UtilMonitor is an Android application focused on tracking utility consumption through a clean mobile interface. It uses Firebase for cloud-backed storage and real-time synchronization, with a simple analytics dashboard for reviewing changing usage data.",
+
+    technologies: ["Kotlin", "Android Studio", "Firebase"],
     featured: false,
-    links: [],
+    links: [
+      {
+        label: "GitHub",
+        href: "https://github.com/shahilkhan001/UtilMonitor",
+      },
+    ],
     highlights: [
-      "Earlier hands-on software project",
-      "Supporting portfolio work",
+      "Real-time utility data synchronization",
+      "Cloud-backed storage with Firebase",
+      "Usage analytics dashboard",
+      "Responsive Android interface",
     ],
   },
 ] as const satisfies readonly Project[];
