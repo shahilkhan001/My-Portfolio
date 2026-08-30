@@ -234,15 +234,3 @@ The design intentionally avoids fake statistics, skill percentages, rating bars,
 **Mohammad Shahil Khan**
 
 Software Engineer & Full-Stack Developer
-
-- Portfolio: https://shahilkhan-dev.vercel.app
-- GitHub: https://github.com/shahilkhan001
-- LinkedIn: https://www.linkedin.com/in/mohammad-shahil-khan/
-
-## Copyright
-
-Copyright © 2026 Mohammad Shahil Khan. All rights reserved.
-
-This repository is publicly available for portfolio review and evaluation. It is **not released under an open-source license**.
-
-See [NOTICE.md](NOTICE.md) for repository usage information.
