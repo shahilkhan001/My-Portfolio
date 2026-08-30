@@ -9,6 +9,7 @@ const navigation = [
   { label: "Capabilities", href: "/#capabilities" },
   { label: "Services", href: "/#services" },
   { label: "About", href: "/#about" },
+  { label: "Certifications", href: "/#certifications" },
 ];
 
 export function SiteHeader() {

@@ -44,6 +44,13 @@ export type Education = {
   details?: readonly string[];
 };
 
+export type Certification = {
+  title: string;
+  issuer: string;
+  date: string;
+  credentialUrl: string;
+};
+
 export type Profile = {
   name: string;
   headline: string;
