@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Menu, X } from "lucide-react";
 
 const navigation = [
@@ -53,6 +54,14 @@ export function MobileNav() {
                   {item.label}
                 </a>
               ))}
+
+              <Link
+                href="/resume"
+                onClick={closeMenu}
+                className="border-b border-border py-3 text-sm font-medium text-ink-muted transition-colors duration-200 hover:text-ink"
+              >
+                Resume
+              </Link>
 
               <a
                 href="https://github.com/shahilkhan001"

@@ -48,6 +48,14 @@ export function SiteHeader() {
             GitHub
           </a>
 
+          <ActionLink
+            href="/resume"
+            variant="text"
+            className="hidden px-2 lg:inline-flex"
+          >
+            Resume
+          </ActionLink>
+
           <MobileNav />
 
           <ActionLink href="/#contact" variant="secondary">

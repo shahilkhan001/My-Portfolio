@@ -1,4 +1,7 @@
 /* eslint-disable @next/next/no-html-link-for-pages -- Native anchors intentionally preserve repeated same-page hash navigation. */
+import { MapPin } from "lucide-react";
+import { siteConfig } from "@/lib/site";
+
 export function SiteFooter() {
   return (
     <footer className="border-t border-border bg-page">
@@ -13,19 +16,19 @@ export function SiteFooter() {
             Android, and AI-enabled software.
           </p>
 
-          <p className="mt-2 text-sm leading-6 text-ink-subtle">
-            Maharajganj, Uttar Pradesh, India · Open to Remote &amp; Relocation
+          <p className="mt-2 flex items-start gap-2 text-sm leading-6 text-ink-subtle">
+            <MapPin
+              aria-hidden="true"
+              className="mt-1 size-4 shrink-0 text-accent"
+              strokeWidth={1.8}
+            />
+            <span>
+              Maharajganj, Uttar Pradesh, India · Open to Remote &amp; Relocation
+            </span>
           </p>
         </div>
 
         <div className="flex flex-wrap gap-x-6 gap-y-3 text-sm font-medium text-ink-muted sm:justify-end">
-          <a
-            href="/#work"
-            className="transition-colors duration-200 hover:text-ink"
-          >
-            Work
-          </a>
-
           <a
             href="/#contact"
             className="transition-colors duration-200 hover:text-ink"
@@ -34,7 +37,16 @@ export function SiteFooter() {
           </a>
 
           <a
-            href="https://github.com/shahilkhan001"
+            href={siteConfig.links.linkedin}
+            target="_blank"
+            rel="noreferrer"
+            className="transition-colors duration-200 hover:text-ink"
+          >
+            LinkedIn
+          </a>
+
+          <a
+            href={siteConfig.links.github}
             target="_blank"
             rel="noreferrer"
             className="transition-colors duration-200 hover:text-ink"
