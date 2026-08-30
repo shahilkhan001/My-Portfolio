@@ -25,6 +25,21 @@ export async function generateMetadata({
   return {
     title: project.title,
     description: project.summary,
+    alternates: {
+      canonical: `/work/${project.slug}`,
+    },
+    openGraph: {
+      title: project.title,
+      description: project.summary,
+      url: `/work/${project.slug}`,
+      images: ["/opengraph-image"],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: project.title,
+      description: project.summary,
+      images: ["/opengraph-image"],
+    },
   };
 }
 
@@ -48,7 +63,7 @@ export default async function ProjectPage({
 
   return (
     <main>
-      <Section tone="page">
+      <Section tone="page" spacing="detail">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-4">
             <ActionLink href="/work" variant="text">
@@ -101,14 +116,22 @@ export default async function ProjectPage({
               </p>
 
               <ul className="mt-6 grid gap-px border border-border bg-border sm:grid-cols-2">
-                {project.highlights.map((highlight) => (
-                  <li
-                    key={highlight}
-                    className="bg-surface p-6 text-sm leading-7 text-ink-muted sm:p-7"
-                  >
-                    {highlight}
-                  </li>
-                ))}
+                {project.highlights.map((highlight, index) => {
+                  const isLastOddHighlight =
+                    project.highlights.length % 2 === 1 &&
+                    index === project.highlights.length - 1;
+
+                  return (
+                    <li
+                      key={highlight}
+                      className={`bg-surface p-6 text-sm leading-7 text-ink-muted sm:p-7 ${
+                        isLastOddHighlight ? "sm:col-span-2" : ""
+                      }`}
+                    >
+                      {highlight}
+                    </li>
+                  );
+                })}
               </ul>
             </div>
 
@@ -137,7 +160,7 @@ export default async function ProjectPage({
         </div>
       </Section>
 
-      <Section tone="muted" className="border-t border-border">
+      <Section tone="muted" spacing="tight" className="border-t border-border">
         <nav
           aria-label="Project navigation"
           className="grid gap-8 sm:grid-cols-2"

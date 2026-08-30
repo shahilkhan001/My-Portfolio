@@ -67,7 +67,7 @@ export const projects = [
     title: "FitZone",
     eyebrow: "Business Website",
     summary:
-      "A responsive fitness business website built with React and Tailwind CSS, featuring structured sections for programs, pricing, testimonials, and contact flows.",
+      "A responsive fitness business website built with React and Tailwind CSS.",
     description:
       "FitZone is an independently deployed, client-style fitness website built to demonstrate practical business-facing frontend development. It uses reusable React components, responsive layouts, smooth section navigation, and structured content for programs, pricing, testimonials, and contact.",
 
@@ -94,7 +94,7 @@ export const projects = [
     title: "GeoAI Smart Explorer",
     eyebrow: "Android Application",
     summary:
-      "An Android geography learning application built with Kotlin, Google Maps API, and Firebase for interactive maps, location search, authentication, quizzes, and score tracking.",
+      "An Android geography learning app with interactive maps, location search, authentication, and quizzes.",
     description:
       "GeoAI Smart Explorer is an Android application for interactive geographical learning and exploration. It integrates Google Maps API for live maps, location search, and multiple map views, while Firebase supports authentication and quiz and score-tracking workflows.",
 
@@ -118,7 +118,7 @@ export const projects = [
     title: "UtilMonitor",
     eyebrow: "Android Application",
     summary:
-      "An Android utility-tracking application built with Kotlin and Firebase for real-time usage updates, cloud-backed data, and simple consumption analytics.",
+      "An Android utility-tracking app with real-time Firebase sync and simple consumption analytics.",
     description:
       "UtilMonitor is an Android application focused on tracking utility consumption through a clean mobile interface. It uses Firebase for cloud-backed storage and real-time synchronization, with a simple analytics dashboard for reviewing changing usage data.",
 

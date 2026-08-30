@@ -4,10 +4,27 @@ import { Section } from "@/components/ui/section";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { projects } from "@/content/projects";
 
+const workDescription =
+  "Selected software projects by Mohammad Shahil Khan across full-stack web development, Android, and AI-enabled applications.";
+
 export const metadata: Metadata = {
   title: "Work",
-  description:
-    "Selected software projects by Mohammad Shahil Khan across full-stack web development, Android, and AI-enabled applications.",
+  description: workDescription,
+  alternates: {
+    canonical: "/work",
+  },
+  openGraph: {
+    title: "Work",
+    description: workDescription,
+    url: "/work",
+    images: ["/opengraph-image"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Work",
+    description: workDescription,
+    images: ["/opengraph-image"],
+  },
 };
 
 export default function WorkPage() {
