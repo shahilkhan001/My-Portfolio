@@ -1,8 +1,15 @@
 import Image from "next/image";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import { ActionLink } from "@/components/ui/action-link";
 import { Container } from "@/components/ui/container";
 import { profile } from "@/content/profile";
 import { profilePhoto } from "@/lib/profile-photo";
+
+const heroDisplay = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  weight: ["600"],
+  display: "swap",
+});
 
 export function Hero() {
   return (
@@ -17,8 +24,11 @@ export function Hero() {
             <span>{profile.location}</span>
           </div>
 
-          <h1 className="max-w-5xl text-5xl font-semibold tracking-[-0.055em] text-ink sm:text-6xl lg:text-7xl xl:text-[5.5rem] xl:leading-[0.98]">
-            {profile.headline}
+          <h1
+            className={`${heroDisplay.className} max-w-5xl text-[2.75rem] font-semibold leading-[1.03] tracking-[-0.04em] text-ink sm:text-[3.5rem] lg:text-[4.25rem] xl:text-[4.75rem] xl:leading-[1]`}
+          >
+            <span className="block">Software Engineer &amp;</span>
+            <span className="block">Full-Stack Developer</span>
           </h1>
 
           <p className="mt-8 max-w-2xl text-xl leading-8 text-ink-muted sm:text-2xl sm:leading-9">

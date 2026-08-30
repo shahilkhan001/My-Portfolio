@@ -140,9 +140,3 @@ export const projects = [
 ] as const satisfies readonly Project[];
 
 export const featuredProjects = projects.filter((project) => project.featured);
-
-export type ProjectSlug = (typeof projects)[number]["slug"];
-
-export function getProjectBySlug(slug: string) {
-  return projects.find((project) => project.slug === slug);
-}
