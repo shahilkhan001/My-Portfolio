@@ -46,3 +46,6 @@ next-env.d.ts
 
 # local migration reference assets
 /legacy-assets/
+
+# Vercel
+.vercel/
