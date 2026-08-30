@@ -3,6 +3,7 @@ type SectionHeadingProps = {
   title: string;
   description?: string;
   className?: string;
+  as?: "h1" | "h2";
 };
 
 export function SectionHeading({
@@ -10,6 +11,7 @@ export function SectionHeading({
   title,
   description,
   className = "",
+  as: Heading = "h2",
 }: SectionHeadingProps) {
   return (
     <div className={`max-w-3xl ${className}`}>
@@ -19,9 +21,9 @@ export function SectionHeading({
         </p>
       ) : null}
 
-      <h2 className="text-3xl font-semibold tracking-[-0.035em] text-ink sm:text-4xl lg:text-5xl">
+      <Heading className="text-3xl font-semibold tracking-[-0.035em] text-ink sm:text-4xl lg:text-5xl">
         {title}
-      </h2>
+      </Heading>
 
       {description ? (
         <p className="mt-5 max-w-2xl text-base leading-7 text-ink-muted sm:text-lg sm:leading-8">

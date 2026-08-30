@@ -34,6 +34,7 @@ export default function WorkPage() {
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-4">
             <SectionHeading
+              as="h1"
               eyebrow="Work"
               title="Selected software projects and engineering work."
               description="A broader view of projects across full-stack web development, Android, business-facing frontend work, and AI-enabled software."
