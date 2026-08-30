@@ -1,6 +1,8 @@
+import Image from "next/image";
 import { ActionLink } from "@/components/ui/action-link";
 import { Container } from "@/components/ui/container";
 import { profile } from "@/content/profile";
+import { profilePhoto } from "@/lib/profile-photo";
 
 export function Hero() {
   return (
@@ -44,6 +46,19 @@ export function Hero() {
         </div>
 
         <aside className="border-t border-border pt-6 lg:col-span-3 lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0 xl:col-start-10">
+          <div className="mb-7 w-36 overflow-hidden rounded-sm sm:w-40 lg:w-full lg:max-w-[168px]">
+            <div className="relative aspect-square">
+              <Image
+                src={profilePhoto.src}
+                alt={profilePhoto.alt}
+                fill
+                unoptimized
+                sizes="180px"
+                className="object-cover object-top"
+              />
+            </div>
+          </div>
+
           <p className="font-mono text-xs font-medium uppercase tracking-[0.14em] text-ink-subtle">
             Current focus
           </p>

@@ -21,6 +21,15 @@ const securityHeaders = [
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "lh3.googleusercontent.com",
+        pathname: "/d/**",
+      },
+    ],
+  },
   turbopack: {
     root: process.cwd(),
   },
